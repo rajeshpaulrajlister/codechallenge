@@ -12,6 +12,10 @@ public class SortOddEven {
 	 */
 	public void sort(int[] array) {
 
+		if (array == null) {
+			throw new RuntimeException("array should not be null");
+		}
+
 		int arraySize = array.length, leftIndex = 0, rightIndex = arraySize - 1, oddCount = 0;
 
 		while (leftIndex < rightIndex) {

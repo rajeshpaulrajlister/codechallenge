@@ -1,6 +1,7 @@
 package com.hobsons.codechallenge;
 
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Entry point to run permutation.
@@ -22,7 +23,8 @@ public class RunPermutation {
 		}
 		scanner.close();
 
-		new Permutation().permute(array, 0, arraySize - 1);
+		Set<String> permutationResultSet = new Permutation().permute(array, 0, arraySize - 1);
+		System.out.println(permutationResultSet);
 	}
 
 }
