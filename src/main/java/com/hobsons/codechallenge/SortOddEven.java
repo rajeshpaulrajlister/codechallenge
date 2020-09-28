@@ -7,38 +7,31 @@ package com.hobsons.codechallenge;
 public class SortOddEven {
 
 	/**
-	 * Sort the given array as ascending order as odd first and then even.
-	 * 
+	 * Sort the given array as ascending order as odd first and then even. Logic
+	 * done by move all odd number to left side and even number to right side of
+	 * the array. And sort odd and even numbers.
 	 */
 	public void sort(int[] array) {
-
-		if (array == null) {
-			throw new RuntimeException("array should not be null");
+		if (array == null || array.length == 0) {
+			throw new RuntimeException("array should not be null or empty");
 		}
-
+		if (array.length == 1) {
+			return;
+		}
 		int arraySize = array.length, leftIndex = 0, rightIndex = arraySize - 1, oddCount = 0;
-
 		while (leftIndex < rightIndex) {
-			// Find first even number from left side.
 			while (leftIndex < arraySize && isOdd(array[leftIndex])) {
 				leftIndex++;
 				oddCount++;
 			}
-
-			// Find first odd number from right side.
-			while (leftIndex < rightIndex && !isOdd(array[rightIndex]))
+			while (leftIndex < rightIndex && !isOdd(array[rightIndex])) {
 				rightIndex--;
-
-			// Swap odd number present on left and even number on right.
+			}
 			if (leftIndex < rightIndex) {
 				swap(array, leftIndex, rightIndex);
 			}
 		}
-
-		// Sort odd number
 		sortInAscendingOrder(array, 0, oddCount);
-
-		// Sort even number
 		sortInAscendingOrder(array, oddCount, arraySize);
 	}
 
@@ -74,5 +67,4 @@ public class SortOddEven {
 			}
 		}
 	}
-
 }

@@ -15,10 +15,8 @@ public class TestPermutation {
 		expectedResult.add(Arrays.toString(new int[] { 3, 2, 2 }));
 		expectedResult.add(Arrays.toString(new int[] { 2, 2, 3 }));
 		expectedResult.add(Arrays.toString(new int[] { 2, 3, 2 }));
-
 		int[] array = new int[] { 2, 2, 3 };
 		Set<String> permutationResultSet = new Permutation().permute(array, 0, array.length - 1);
-
 		Assert.assertEquals(expectedResult, permutationResultSet);
 	}
 
@@ -26,5 +24,4 @@ public class TestPermutation {
 	public void testNullInput() {
 		new Permutation().permute(null, 0, 0);
 	}
-
 }

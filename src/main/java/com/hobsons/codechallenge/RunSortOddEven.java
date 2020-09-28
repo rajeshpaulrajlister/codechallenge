@@ -9,23 +9,21 @@ import java.util.Scanner;
 public class RunSortOddEven {
 
 	public static void main(String[] args) {
-
 		System.out.println("Enter size of array");
-
 		Scanner scanner = new Scanner(System.in);
-		int arraySize = scanner.nextInt();
-
-		System.out.println("Enter array elements");
-
-		int array[] = new int[arraySize];
-		for (int i = 0; i < arraySize; i++) {
-			array[i] = scanner.nextInt();
+		try {
+			int arraySize = scanner.nextInt();
+			if (arraySize > 0) {
+				System.out.println("Enter array elements");
+				int array[] = new int[arraySize];
+				for (int i = 0; i < arraySize; i++) {
+					array[i] = scanner.nextInt();
+				}
+				new SortOddEven().sort(array);
+				System.out.println(Arrays.toString(array));
+			}
+		} finally {
+			scanner.close();
 		}
-		scanner.close();
-
-		new SortOddEven().sort(array);
-
-		System.out.println(Arrays.toString(array));
 	}
-
 }
