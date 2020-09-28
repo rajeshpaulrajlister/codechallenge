@@ -7,21 +7,23 @@ import org.junit.Test;
 
 public class TestSortOddEven {
 
+	private SortOddEven sortOddEven = new SortOddEven();
+
 	@Test(expected = RuntimeException.class)
 	public void testSortByNullInput() {
-		new SortOddEven().sort(null);
+		sortOddEven.sort(null);
 	}
 
 	@Test(expected = RuntimeException.class)
 	public void testSortByEmptyInput() {
-		new SortOddEven().sort(new int[0]);
+		sortOddEven.sort(new int[0]);
 	}
 
 	@Test
 	public void testSortSortPositiveInput() {
 		int[] expectedArray = new int[] { 1, 3, 5, 2, 6, 8 };
 		int[] array = new int[] { 2, 3, 1, 5, 8, 6 };
-		new SortOddEven().sort(array);
+		sortOddEven.sort(array);
 		Assert.assertEquals(Arrays.toString(expectedArray), Arrays.toString(array));
 	}
 
@@ -29,7 +31,7 @@ public class TestSortOddEven {
 	public void testSortBySingleValueArrayInput() {
 		int[] expectedArray = new int[] { 2 };
 		int[] array = new int[] { 2 };
-		new SortOddEven().sort(array);
+		sortOddEven.sort(array);
 		Assert.assertEquals(Arrays.toString(expectedArray), Arrays.toString(array));
 	}
 }

@@ -17,11 +17,11 @@ public class Permutation {
 	 * Validation of the inputs only done here, to avoid repetitive checking of
 	 * the inputs validation.
 	 */
-	public Set<String> permute(int[] array, int leftIndex, int rightIndex) {
+	public Set<String> permute(int[] array) {
 		if (array == null || array.length == 0) {
 			throw new RuntimeException("array should not be null or empty");
 		}
-		return doPermute(array, leftIndex, rightIndex);
+		return doPermute(array, 0, array.length - 1);
 	}
 
 	/**

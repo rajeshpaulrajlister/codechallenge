@@ -19,7 +19,7 @@ public class RunPermutation {
 				for (int i = 0; i < arraySize; i++) {
 					array[i] = scanner.nextInt();
 				}
-				Set<String> permutationResultSet = new Permutation().permute(array, 0, arraySize - 1);
+				Set<String> permutationResultSet = new Permutation().permute(array);
 				System.out.println(permutationResultSet);
 			}
 		} finally {
